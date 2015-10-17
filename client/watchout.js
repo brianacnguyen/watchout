@@ -1,6 +1,7 @@
 var svgWidth = 800;
 var svgHeight = 500;
 
+
 var createData = function(asteroidCount) {
   var result = [];
   for (var i = 0; i < asteroidCount; i++) {
@@ -11,31 +12,38 @@ var createData = function(asteroidCount) {
   return result;
 };
 
-var dataset = createData(50);
-
-var svg = d3.select('body')
+var background = 
+          d3.select('body')
             .append("svg")
             .attr("width", svgWidth)
             .attr("height", svgHeight)
-            .style("border", "5px solid red");
-
-var g = svg.append("g");
+            .style("border", "5px solid red")
+            .append("g");
 
 var asteroidX = 200;
 var asteroidY = 52;
 
-var img =   d3.select("g")
-            .selectAll('g')
-            .data(dataset)//
-            .enter()
-            .append("svg:image")
-            .attr("width", 30)
-            .attr("height", 30)//
-            .attr("xlink:href", "asteroid.png")
-            .attr("x", function(d) {
-              return d[0];
-            })
-            .attr("y", function(d) {
-              return d[1];
-            });
+var update = function(dataset) {
+  var asteroid = background.selectAll(".asteroid").data(dataset);
+  asteroid
+    .transition()
+    .duration(1000)
+    .attr("width", 30)
+    .attr("height", 30)
+    .attr('x', function(d) { return d[0]; })
+    .attr('y', function(d) { return d[1]; });
+  asteroid
+    .enter().append("image")
+    .attr("width", 30)
+    .attr("height", 30)//
+    .attr("xlink:href", "asteroid.png")
+    .attr('x', function(d) { return d[0]; })
+    .attr('y', function(d) { return d[1]; })
+    .attr('class', 'asteroid')
+};
 
+update(createData(50));
+
+setInterval(function() {
+    update(createData(50))
+}, 2000);
