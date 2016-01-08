@@ -1,7 +1,27 @@
-/* your beautiful css styling goes here! */
-
-/* Note: an asteroid image is included in this repo.
-Feel free to use it if you like. */
-.background {
+body{
+	margin: 0;
+	font-family: helvetica;
+	position: relative;
+}
+.board {
 	background-image: url('background.jpg');
+	position: absolute;
+	border: 2px solid black;
+	padding: 0px 10px;
+}
+.scoreboard {
+	padding: 0px 6px;
+}
+.mouse{
+	position: absolute;
+}
+.asteroid {
+	top: 0%;
+	left: 0%;
+	position: fixed;
+}
+.flash {
+	background-image: url('background-collision.jpg');
+	position: absolute;
+	border: 2px solid black;
 }
