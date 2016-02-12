@@ -1,4 +1,7 @@
-Watchout
-==============
+# DO-YOUR-APPS
 
-This is a project I completed as a student at Hack Reactor. This project was worked on with a pair. 
+> A single-page app that helps Hack Reactor grads analyze their job application progress 
+
+## Product Owner
+
+  - __Product Owner__: Brian Nguyen (brianacnguyen)

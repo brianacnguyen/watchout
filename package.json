@@ -8,8 +8,20 @@
     "start": "open client/index.html"
   },
   "license": "Copyright 2015, Hack Reactor Remote Beta. All rights reserved.",
-  "bugs": {
-    "url": "https://github.com/remotebeta-labs/sprint.watchout/issues"
+  "devDependencies": {
+    "browser-sync": "^1.5.7",
+    "gulp": "^3.8.5",
+    "gulp-if": "^1.2.5",
+    "gulp-jshint": "^1.6.3",
+    "gulp-nodemon": "^1.0.4",
+    "gulp-shell": "^0.2.7",
+    "jshint-stylish": "^0.2.0"
   },
-  "homepage": "https://github.com/remotebeta-labs/sprint.watchout"
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.4.5",
+    "jwt-simple": "^0.2.0",
+    "morgan": "^1.1.1",
+    "request": "^2.36.0"
+  }
 }

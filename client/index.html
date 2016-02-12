@@ -2,8 +2,10 @@
 <html>
   <head>
     <link rel='stylesheet' type='css' href='styles.css'>
+    <title>Watchout!</title>
   </head>
   <body>
+  <script src="1-rendering_files/jquery.js"></script>
   <audio id="aquaroad" autoplay loop>
       <source src="aquaroad.mp3" />
     </audio>  
@@ -15,7 +17,8 @@
       <div class="collisions">Bubbles Popped: <span>0</span></div>
       <button onclick="startEnemies();pause();">Pause</button>
       <button onclick="startEnemies(startEnemies);start();">Start</button>
-      <button onclick="addEnemy();">Increase Difficulty</button>
+      <button onclick="addEnemy();">Increase Difficulty</button> 
+      <div class='unmute' onclick="document.getElementById('aquaroad').muted = !document.getElementById('aquaroad').muted;$(this).toggleClass('mute')"></div>
     </div>
     <script src="lib/d3.js" charset="utf-8"></script>
     <script src='watchout.js'></script>
